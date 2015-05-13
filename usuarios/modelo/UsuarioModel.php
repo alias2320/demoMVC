@@ -5,7 +5,7 @@
 	
 	class Usuario extends DBPDO{
 		
-		public $table = 't_usuario';
+		public $table = 'usuarios';
 		
 		//public $definition = array('nombre','email','password','edad');
 		//$params valores que vinene de la vista 
