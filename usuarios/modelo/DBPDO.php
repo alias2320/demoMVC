@@ -1,10 +1,10 @@
 <?php
 	class DBPDO {
 		
-		private $host = 'localhost';		
-		private $user = 'root';		
-		private $pass = '';		
-		private $dbname = 'dbpruebapdo';
+		private $host = '172.16.1.167';		
+		private $user = 'sos';		
+		private $pass = 'sos04';		
+		private $dbname = 'comunicaciones';
 		
 		public $lastQuery = false;
 		
@@ -25,7 +25,7 @@
 		
 		private function Connection(){
 			
-			$dsn = 'mysql:host='.$this->host.';dbname='.$this->dbname;
+			$dsn = 'oci:host='.$this->host.';dbname='.$this->dbname;
 			
 			$options = array( PDO::ATTR_PERSISTENT 	=>  $this->persistent,
 							  PDO::ATTR_ERRMODE		=>	PDO::ERRMODE_EXCEPTION);
