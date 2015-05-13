@@ -1,0 +1,11 @@
+#crear_usuario div{
+    display: block;
+    margin: 8px;
+    //border: solid #333 2px;
+/*    background-color: yellow;
+    margin: 0 auto;*/
+}
+
+#crear_usuario div span{
+    font-weight: bold;
+}

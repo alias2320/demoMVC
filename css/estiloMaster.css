@@ -1,0 +1,160 @@
+//@import "../vista/css/estiloUsuario.css";
+* { padding: 0; margin: 0; }
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    background-color:white;
+}
+
+/* Maquetaci�n */
+#wrapper { 
+    margin: 0 auto;
+    width: 100%;
+}
+
+#header {
+    width: 100%;
+    float: left;
+    height: 120px;
+    background: #D9E3E5;
+    background-image: url(../images/logo1.jpg);
+    background-repeat: no-repeat;
+    background-size: 25% 100%;
+    //border-bottom:1px solid #D9E3E5;
+}
+
+#leftcolumn { 
+    height:inherit;
+    width: 20%;
+    float: left;
+    background-color: #D9E3E5;
+}
+
+#content { 
+    float: left;
+    color: #333;
+    //background: paleturquoise;
+    width:76%;
+    height:inherit;
+    display: inline;
+}
+/* end: maquetaci�n */
+
+/* estilo de texto */
+.t{
+    font-size:18px; font-weight:bold; margin:10px 0 10px 0; padding-left:20px;
+}
+
+/*------------- ESTILOS TABLA -----------------*/
+.tabla th {
+    padding: 5px;
+    font-size: 16px;
+    background-color: #83aec0;
+    color: #FFFFFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ffffff;
+    font-family: �Trebuchet MS�, Arial;
+    text-transform: uppercase;
+}
+
+.tabla td {
+    padding: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ffffff;
+    text-align:right;
+} 
+
+
+/*------------------------- MENU IZQUIERDA ----------------------------*/
+#menu {
+    width: 200px;
+    margin: 10px;
+    //background-color: #FFFFCC;
+}
+
+#menu li a {
+    height: 32px;
+    //voice-family: "\"; 
+    //voice-family: inherit;
+    height: 24px;
+    text-decoration: none;
+}	
+
+#menu li a:link{
+    color: black;
+    display: block;
+    //background:  url(../images/menu.gif);
+    padding: 8px 0 0 10px;
+}
+
+#menu li a:visited {
+    color: blueviolet;
+    display: block;
+    //background:  url(../images/menu.gif);
+    padding: 8px 0 0 10px;
+}
+
+
+#menu li a:hover {
+    color: brown;
+    //background:  url(../images/menu.gif) 0 -32px;
+    padding: 8px 0 0 10px;
+}
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/*------------------------- BARRA DE NAVEGACIÓN DE MÓDULOS ----------------------------*/
+#navi{
+    width: 100%;
+    margin: auto;
+    padding: 3px;
+    clear:both;
+    //background-color: beige;
+}
+
+#navi nav div{
+    width: 20%;
+    margin: 0 auto;
+    //position: relative;
+}
+
+#navi nav div a:link{
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-style: italic;
+    color: #333;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/*------------------------- LINEA DIVISORIA HEADER/CONTENIDO ----------------------------*/
+
+#linea{
+    width: 100%;
+    height: 1px;
+    background-color: #D9E3E5;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+/*------------------------- FOOTER ----------------------------*/
+
+#footer{
+    width: 100%;
+    float: left;
+    height: 100px;
+    background: #D9E3E5;
+    background-image: url(../images/logo2.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 25% 100%;
+    margin-top: 3px;
+    //border-bottom:1px solid #D9E3E5;
+
+}
