@@ -1,10 +1,12 @@
 <?php
+	
+	
 	class DBPDO {
 		
-		private $host = '172.16.1.167';		
-		private $user = 'sos';		
-		private $pass = 'sos04';		
-		private $dbname = 'comunicaciones';
+		private $host = '172.16.1.176';
+                private $user = 'sos';
+                private  $pass = 'sos04';
+                private  $dbname = 'comunicaciones';
 		
 		public $lastQuery = false;
 		
@@ -18,7 +20,7 @@
 		
 		public function __construct(){
 			
-			$this->db = $this->Connection();
+		$this->db = $this->Connection();
 			
 		}
 		
@@ -28,7 +30,7 @@
 			$dsn = 'oci:host='.$this->host.';dbname='.$this->dbname;
 			
 			$options = array( PDO::ATTR_PERSISTENT 	=>  $this->persistent,
-							  PDO::ATTR_ERRMODE		=>	PDO::ERRMODE_EXCEPTION);
+                                          PDO::ATTR_ERRMODE     =>	PDO::ERRMODE_EXCEPTION);
 							  
 			try {
 				
@@ -76,13 +78,27 @@
 		
 		public function all($limit = 10){
 			
-			$prepare = $this->db->prepare('SELECT * FROM '.$this->table.' LIMIT '.$limit);
+			/*$prepare = $this->db->prepare('SELECT * FROM '.$this->table.' LIMIT '.$limit);
 			
 			$prepare->execute();
 			
 			$this->setQuery($prepare);
 			
 			return $prepare->fetchAll(PDO::FETCH_ASSOC);
+                         * 
+                         */
+                    
+                    //$prepare = $this->db->prepare('SELECT * FROM '.$this->table.' LIMIT '.$limit);
+	//$prepare = $this->db->prepare('Select * from usuarios LIMIT'.$limit);
+                         $prepare = $this->db->prepare("SELECT * FROM $this->table LIMIT".$limit);
+	
+                          $prepare->execute();
+			
+                        $this->setQuery($prepare);
+			
+                        return $prepare->fetchAll(PDO::FETCH_ASSOC);
+			
+	
 			
 		}
 		
@@ -101,7 +117,8 @@
 				
 				$this->setQuery($prepare);
 				
-				return $this->db->lastInsertId();
+				//return $this->db->lastInsertId();
+                                
 				
 			} else {
 				
@@ -146,7 +163,7 @@
 				
 				//Obtenemos la primera key
 				$key = key($param);
-				
+                                
 				$prepare = $this->db->prepare("DELETE FROM $this->table WHERE $key = :$key");
 				
 				$prepare->execute($this->normalizePrepareArray($param));
