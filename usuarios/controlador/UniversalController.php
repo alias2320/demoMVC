@@ -17,10 +17,10 @@ class UniversalController {
     public function crearUsuario($params) {
         $pagina = $this->cargar_plantilla('Creación de Usuario');
         $barra = $this->cargar_pagina('vista/secciones/navi.php');
-        if ($params != '') {           //al pricipio los parametros estan bacios y envia a cargar la pagina de ingreso usuarios
-            $usuario = new Usuario(); //se crea el objeto de tipo usuario de la clase del modelo para evniar la acción
+        if ($params != '') {           //al pricipio los parametros estan vacios y envia a cargar la pagina de ingreso usuarios
+            $usuario = new Usuario(); //se crea el objeto de tipo usuario de la clase del modelo para enviar la acción
             $id = $usuario->insert($params); //utilizamos el la variable $id= porque nos devuelve un valor la funcion 
-            $contenido = '<h3>Usuario creado</h3>' . $id;
+            $contenido = '<h3>Usuario creadooooo</h3>';
         } else {
 
             $contenido = $this->cargar_pagina('vista/contenidos/ingresoUsuario.php'); //carga la pagina de ingreso de usuario el formulario
@@ -29,6 +29,25 @@ class UniversalController {
         $pagina = $this->cambiar_contenido('/\#NAVI\#/ms', $barra, $pagina);          //construyo la pagina
         $pagina = $this->cambiar_contenido('/\#CONTENIDO\#/ms', $contenido, $pagina); //construyo la pagina
         $this->generar_vista($pagina);
+    }
+
+    public function eliminarUsuario($params)
+    {
+        $pagina = $this->cargar_plantilla('Eliminar Usuario');
+        $barra = $this->cargar_pagina('vista/secciones/navi.php');
+        if ($params != '') {           //al pricipio los parametros estan vacios y envia a cargar la pagina de ingreso usuarios
+            $usuario = new Usuario(); //se crea el objeto de tipo usuario de la clase del modelo para enviar la acción
+            $id = $usuario->eliminar($params); //utilizamos el la variable $id= porque nos devuelve un valor la funcion 
+            $contenido = '<h3>Usuario eliminado</h3>' ;
+        } else {
+
+            $contenido = $this->cargar_pagina('vista/contenidos/eliminarUsuario.php'); //carga la pagina de ingreso de usuario el formulario
+            
+        }
+        
+        $pagina = $this->cambiar_contenido('/\#NAVI\#/ms', $barra, $pagina);
+        $pagina = $this->cambiar_contenido('/\#CONTENIDO\#/ms', $contenido, $pagina); //construyo la pagina
+        $this->generar_vista($pagina); 
     }
 
     public function listar() {

@@ -28,7 +28,15 @@
                     return parent::all();
                   
                 }
-
+                
+                
+                public function eliminar($params)
+                {
+                    return parent::delete($this->validateParams($params));
+                  
+                }
+                
+                
 
 
 
